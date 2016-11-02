@@ -1,0 +1,6 @@
+#include "Test.c"
+
+Main()
+{
+
+}

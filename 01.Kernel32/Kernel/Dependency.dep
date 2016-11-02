@@ -1,0 +1,2 @@
+Main.o: Main.c Types.h Page.h AsmHelpers.h
+Page.o: Page.c Page.h Types.h
