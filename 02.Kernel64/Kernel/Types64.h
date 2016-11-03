@@ -9,7 +9,7 @@
 
 #define TRUE	1
 #define FALSE	0
-#define NULL	0x00
+#define NULL	0
 
 #pragma pack(push, 1)
 typedef struct kChracterStruct

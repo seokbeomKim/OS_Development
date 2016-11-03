@@ -31,6 +31,7 @@ global kISR_ETCException
 	push	r11
 	push	r12
 	push	r13
+	push	r14
 	push	r15
 
 	mov		ax, ds	; ds segment selector

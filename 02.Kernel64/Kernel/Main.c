@@ -36,22 +36,21 @@ void Main(void)
 	kEnableInterrupt();
 	kPrintString(0, 17, "[KERNEL] Enable Interrupt");
 
-	while(1);
-//	while(1) {
-//		if (kIsReadBufferFull() == TRUE) {
-//			bTemp = kGetKeyboardScanCode();
-//
-//			if (kConvertScanCodeToASCIICode(bTemp, &(vcTemp[0]), &bFlags) == TRUE) {
-//				if (bFlags & KEY_FLAGS_DOWN) {
-//					kPrintString (i++, 16, vcTemp);
-//
-//					if (vcTemp[0] == '0') {
-//						bTemp = bTemp / 0;
-//					}
-//				}
-//			}
-//		}
-//	}
+	while(1) {
+		if (kIsReadBufferFull() == TRUE) {
+			bTemp = kGetKeyboardScanCode();
+
+			if (kConvertScanCodeToASCIICode(bTemp, &(vcTemp[0]), &bFlags) == TRUE) {
+				if (bFlags & KEY_FLAGS_DOWN) {
+					kPrintString (i++, 20, vcTemp);
+
+					if (vcTemp[0] == '0') {
+						bTemp = bTemp / 0;
+					}
+				}
+			}
+		}
+	}
 }
 
 void kPrintString(int x, int y, const char* str)

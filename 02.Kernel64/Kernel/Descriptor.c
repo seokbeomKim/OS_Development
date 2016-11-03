@@ -62,7 +62,7 @@ void kInitializeIDTTables(void) {
 	pstIDTR		= (IDTR *) IDTR_START_ADDRESS;
 	pstEntry	= (IDT_ENTRY *) (IDTR_START_ADDRESS + sizeof(IDTR));
 	pstIDTR->qwBaseAddress	= (QWORD) pstEntry;
-	pstIDTR->wLimit			= (WORD) (IDT_TABLE_SIZE - 1);
+	pstIDTR->wLimit			= IDT_TABLE_SIZE - 1;
 
 	// Register Exception ISR
 	kSetIDTEntry ( &(pstEntry[0]), kISR_DivideError, 0x08, IDT_FLAGS_IST1,

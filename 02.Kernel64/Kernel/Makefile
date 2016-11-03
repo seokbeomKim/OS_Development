@@ -6,16 +6,17 @@ OBJCOPY64=objcopy -j .text -j .data -j .rodata -j .bss -S -O binary
 C_SOURCES=$(wildcard *.c)
 ASM_SOURCES=$(wildcard *.asm)
 
+ENTRY_OBJ_FILES=EntryPoint.o
 C_OBJ_FILES=$(notdir $(patsubst %.c,%.o,$(C_SOURCES)))
 ASM_OBJ_FILES=$(notdir $(patsubst %.asm,%.o,$(ASM_SOURCES)))
 
-all: dep EntryPoint64 Kernel64.elf.bin
+all: dep Kernel64.bin
 	echo "Kernel64.elf.bin has been created."
 
-EntryPoint64: EntryPoint.s
-	$(NASM64) $< -o EntryPoint64.bin
+$(ENTRY_OBJ_FILES): EntryPoint.s
+	$(NASM64) $< -o $@
 
-Kernel64.elf.bin: Kernel64.elf
+Kernel64.bin: Kernel64.elf
 	$(OBJCOPY64) Kernel64.elf $@
 	
 %.o: %.c
@@ -24,7 +25,7 @@ Kernel64.elf.bin: Kernel64.elf
 %.o: %.asm
 	$(NASM64) -o $@ $<
 
-Kernel64.elf: $(C_OBJ_FILES) $(ASM_OBJ_FILES)
+Kernel64.elf: $(ENTRY_OBJ_FILES) $(C_OBJ_FILES) $(ASM_OBJ_FILES)
 	$(LD64) -o $@ $^
 
 clean:
