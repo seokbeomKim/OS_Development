@@ -1,7 +1,7 @@
-Main.o: Main.c Types64.h Keyboard.h Descriptor.h
-PIC_Controller.o: PIC_Controller.c PIC_Controller.h Types64.h
-Helper.o: Helper.c Helper.h Types64.h
-InterruptHandler.o: InterruptHandler.c InterruptHandler.h Types64.h \
- PIC_Controller.h
-Descriptor.o: Descriptor.c Descriptor.h Types64.h Helper.h ISR.h
-Keyboard.o: Keyboard.c Keyboard.h Types64.h AsmHelper.h
+Main.o: Main.c \
+ /home/sukbeom/Workspace/OS64/02.Kernel64/Kernel/DataType/Types64.h \
+ /home/sukbeom/Workspace/OS64/02.Kernel64/Kernel/DeviceDriver/DeviceDriver.h \
+ /home/sukbeom/Workspace/OS64/02.Kernel64/Kernel/DeviceDriver/Keyboard.h \
+ /home/sukbeom/Workspace/OS64/02.Kernel64/Kernel/DeviceDriver/PIC_Controller.h \
+ /home/sukbeom/Workspace/OS64/02.Kernel64/Kernel/Init/Descriptor.h \
+ /home/sukbeom/Workspace/OS64/02.Kernel64/Kernel/Asm/AsmHelper.h

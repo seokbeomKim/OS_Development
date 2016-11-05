@@ -10,25 +10,25 @@ C_OBJ_FILES=$(notdir $(patsubst %.c,%.o,$(C_SOURCES)))
 ASM_OBJ_FILES=$(notdir $(patsubst %.asm,%.o,$(ASM_SOURCES)))
 
 all: dep Kernel32.elf.bin
-	echo "Kernel32.elf.bin has been created."
+	@echo ">>> Kernel32.elf.bin has been created."
 	
 Kernel32.elf.bin: Kernel32.elf
-	$(OBJCOPY32) Kernel32.elf $@
+	@$(OBJCOPY32) Kernel32.elf $@
 	
 %.o: %.c
-	$(GCC32) -c $<
+	@$(GCC32) -c $<
 
 %.o: %.asm
-	$(NASM32) -o $@ $<
+	@$(NASM32) -o $@ $<
 
 Kernel32.elf: $(C_OBJ_FILES) $(ASM_OBJ_FILES)
-	$(LD32) -o $@ $^
+	@$(LD32) -o $@ $^
 
 clean:
-	rm -rf *.bin *.elf *.o
+	@rm -rf *.bin *.elf *.o
 	
 dep:
-	$(GCC32) -MM $(C_SOURCES) > Dependency.dep
+	@$(GCC32) -MM $(C_SOURCES) > Dependency.dep
 	
 ifeq (Dependency.dep, $(wildcard Dependency.dep))
 include Dependency.dep

@@ -7,27 +7,27 @@ OBJECT_DIRECTORY = Temp
 SOURCE_DIRECTORY = Source
 
 ROOT_DIRECTORY = $(PWD)
+C_SOURCE_FILES = $(wildcard Source/*.c)
 
 all: prepare Kernel64.bin
 
-C_SOURCE_FILES = $(wildcard Source/*.c)
-
 prepare:
-	mkdir -p $(OBJECT_DIRECTORY)
+	@mkdir -p $(OBJECT_DIRECTORY)
 	
 clean:
-	rm -f *.bin
-	rm -rf $(OBJECT_DIRECTORY)
-	rm -f *.o
-	rm -f *.elf
-	make -C Kernel clean
+	@echo ">>> Clean the kernel image..."
+	@rm -f *.bin
+	@rm -rf $(OBJECT_DIRECTORY)
+	@rm -f *.o
+	@rm -f *.elf
+	@make -C Kernel clean
 	
 dep:
-	@echo "Generate dependency file..."
-	gcc -MM $(C_SOURCE_FILES) > Dependency.dep
+	@echo ">>> Generate dependency file..."
+	@gcc -MM $(C_SOURCE_FILES) > Dependency.dep
 
 Kernel64.bin:
-	@echo "Compile Kernel file..."
-	make -C Kernel
-	mv Kernel/Kernel64.bin $@
+	@echo ">>> Comple & Generate a kernel image..."
+	@make -C Kernel -s
+	@mv Kernel/Kernel64.bin $@
 	#mv Kernel/EntryPoint64.bin $(OBJECT_DIRECTORY)/EntryPoint64.bin

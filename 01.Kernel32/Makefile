@@ -13,32 +13,32 @@ all: prepare Kernel32.bin
 C_SOURCE_FILES = $(wildcard Source/*.c)
 
 prepare:
-	mkdir -p $(OBJECT_DIRECTORY)
+	@mkdir -p $(OBJECT_DIRECTORY)
 	
 
 Kernel32.bin: $(OBJECT_DIRECTORY)/EntryPoint.bin \
 			$(OBJECT_DIRECTORY)/Kernel32.elf.bin
-	@echo "Generate kernel binary file..."
-	cat $^ > $@
+	@echo ">>> Generate 32bits kernel binary..."
+	@cat $^ > $@
 	
 clean:
-	rm -f *.bin
-	rm -rf $(OBJECT_DIRECTORY)
-	rm -f *.o
-	rm -f *.elf
-	make -C Kernel clean
-	make -C EntryPoint clean
+	@rm -f *.bin
+	@rm -rf $(OBJECT_DIRECTORY)
+	@rm -f *.o
+	@rm -f *.elf
+	@make -C Kernel clean
+	@make -C EntryPoint clean
 	
 dep:
-	@echo "Generate dependency file..."
-	gcc -MM $(C_SOURCE_FILES) > Dependency.dep
+	@echo ">>> Generate dependency file..."
+	@gcc -MM $(C_SOURCE_FILES) > Dependency.dep
 	
 $(OBJECT_DIRECTORY)/EntryPoint.bin: 
-	@echo "Compile entry point file..."
-	make -C EntryPoint
-	mv EntryPoint/EntryPoint.bin $@
+	@echo ">>> Build an entry point..."
+	@make -C EntryPoint
+	@mv EntryPoint/EntryPoint.bin $@
 
 $(OBJECT_DIRECTORY)/Kernel32.elf.bin:
-	@echo "Compile Kernel file..."
-	make -C Kernel
-	mv Kernel/Kernel32.elf.bin $@
+	@echo ">>> Build a kernel file..."
+	@make -C Kernel
+	@mv Kernel/Kernel32.elf.bin $@

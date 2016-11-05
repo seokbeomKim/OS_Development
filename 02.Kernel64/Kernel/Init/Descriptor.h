@@ -1,7 +1,7 @@
 #ifndef __DESCRIPTOR_H__
 #define __DESCRIPTOR_H__
 
-#include "Types64.h"
+#include <DataType/Types64.h>
 
 // GDT 관련 매크로
 #define	GDT_TYPE_CODE			0x0A

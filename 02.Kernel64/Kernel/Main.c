@@ -1,6 +1,7 @@
-#include "Types64.h"
-#include "Keyboard.h"
-#include "Descriptor.h"
+#include <DataType/Types64.h>
+#include <DeviceDriver/DeviceDriver.h>
+#include <Init/Descriptor.h>
+#include <Asm/AsmHelper.h>
 
 void kPrintString(int x, int y, const char* str);
 

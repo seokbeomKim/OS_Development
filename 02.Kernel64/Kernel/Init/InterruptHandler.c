@@ -1,5 +1,5 @@
-#include "InterruptHandler.h"
-#include "PIC_Controller.h"
+#include <Init/InterruptHandler.h>
+#include <DeviceDriver/PIC_Controller.h>
 
 // 공통으로 사용되는 Exception Handler
 void kCommonExceptionHandler(int iVectorNum, QWORD qwErrorCode) {

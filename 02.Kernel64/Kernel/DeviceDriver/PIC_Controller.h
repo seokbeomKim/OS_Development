@@ -1,7 +1,7 @@
 #ifndef	__PIC_CONTROLLER_H__
 #define __PIC_CONTROLLER_H__
 
-#include "Types64.h"
+#include <DataType/Types64.h>
 
 #define PIC_MASTER_PORT1		0x20
 #define	PIC_MASTER_PORT2		0x21

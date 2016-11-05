@@ -1,5 +1,5 @@
-#include "Keyboard.h"
-#include "AsmHelper.h"
+#include <DeviceDriver/DeviceDriver.h>
+#include <Asm/AsmHelper.h>
 
 #define MAXIMUM_WAIT_COUNT	0xFFFF
 

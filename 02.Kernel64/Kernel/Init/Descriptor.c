@@ -1,6 +1,6 @@
-#include "Descriptor.h"
-#include "Helper.h"
-#include "ISR.h"
+#include <Init/Descriptor.h>
+#include <Include/Helper.h>
+#include <Asm/ISR.h>
 
 void kInitializeGDTTableAndTSS(void) {
 	GDTR*			pstGDTR;

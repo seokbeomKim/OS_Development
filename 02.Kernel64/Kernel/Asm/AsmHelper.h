@@ -1,7 +1,7 @@
 #ifndef __ASM_HELPER_H__
 #define __ASM_HELPER_H__
 
-#include "Types64.h"
+#include <DataType/Types64.h>
 
 BYTE	kReadFromPort(WORD port_num);
 void	kWriteToPort(WORD port_num, BYTE value);

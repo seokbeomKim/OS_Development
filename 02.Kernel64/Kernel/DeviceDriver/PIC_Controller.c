@@ -1,4 +1,4 @@
-#include "PIC_Controller.h"
+#include <DeviceDriver/PIC_Controller.h>
 
 void kInitializePIC(void) {
 	// MASTER 초기화

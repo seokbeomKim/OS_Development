@@ -1,7 +1,7 @@
 #ifndef __KEYBOARD_H__
 #define __KEYBOARD_H__
 
-#include "Types64.h"
+#include <DataType/Types64.h>
 
 #define	KEY_SKIPCOUNTFORPAUSE	2
 
