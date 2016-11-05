@@ -17,7 +17,9 @@ Kernel64:
 
 Disk.img: 00.BootLoader/BootLoader.bin 01.Kernel32/Kernel32.bin 02.Kernel64/Kernel64.bin
 	@echo "* Generate disk image with ImageMaker...";
+	@echo "======== Generated O/S image information ========"; 
 	@./ImageMaker  00.BootLoader/BootLoader.bin 01.Kernel32/Kernel32.bin 02.Kernel64/Kernel64.bin
+	@echo "=================================================";      
 
 clean:
 	@echo "* Cleaning..."

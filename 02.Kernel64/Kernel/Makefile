@@ -29,14 +29,14 @@ Kernel64.bin: Kernel64.elf
 	@$(OBJCOPY64) Kernel64.elf $@
 	
 %.o: %.c
-	@$(GCC64) -c $<
+	@$(GCC64) -c $< -Wall
 
 %.o: %.asm
 	@$(NASM64) -o $@ $<
 
 Kernel64.elf: $(ENTRY_OBJ_FILES) $(C_OBJ_FILES) $(ASM_OBJ_FILES)
 	@mv Main.o Temp_C/
-	$(LD64) -o $@ EntryPoint.o Temp_C/*.o Temp_ASM/*.o 
+	@$(LD64) -o $@ EntryPoint.o Temp_C/*.o Temp_ASM/*.o 
 
 clean:
 	@echo ">>> Cleaning kernel64 generated files...";
