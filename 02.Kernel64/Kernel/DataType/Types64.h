@@ -1,5 +1,5 @@
-#ifndef __TYPES_H__
-#define __TYPES_H__
+#ifndef __TYPES64_H__
+#define __TYPES64_H__
 
 #define BYTE	unsigned char
 #define BOOL	unsigned char

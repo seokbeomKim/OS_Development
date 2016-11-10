@@ -1,7 +1,8 @@
-#include <DataType/Types64.h>
+#include <DataType/Types.h>
 #include <DeviceDriver/DeviceDriver.h>
 #include <Init/Descriptor.h>
 #include <Asm/AsmHelper.h>
+#include <Testcase/Testcase.h>
 
 void kPrintString(int x, int y, const char* str);
 

@@ -1,7 +1,10 @@
 Main.o: Main.c \
+ /home/sukbeom/Workspace/OS64/02.Kernel64/Kernel/DataType/Types.h \
+ /home/sukbeom/Workspace/OS64/02.Kernel64/Kernel/DataType/Queue.h \
  /home/sukbeom/Workspace/OS64/02.Kernel64/Kernel/DataType/Types64.h \
  /home/sukbeom/Workspace/OS64/02.Kernel64/Kernel/DeviceDriver/DeviceDriver.h \
  /home/sukbeom/Workspace/OS64/02.Kernel64/Kernel/DeviceDriver/Keyboard.h \
  /home/sukbeom/Workspace/OS64/02.Kernel64/Kernel/DeviceDriver/PIC_Controller.h \
  /home/sukbeom/Workspace/OS64/02.Kernel64/Kernel/Init/Descriptor.h \
- /home/sukbeom/Workspace/OS64/02.Kernel64/Kernel/Asm/AsmHelper.h
+ /home/sukbeom/Workspace/OS64/02.Kernel64/Kernel/Asm/AsmHelper.h \
+ /home/sukbeom/Workspace/OS64/02.Kernel64/Kernel/Testcase/Testcase.h

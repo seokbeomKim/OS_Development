@@ -1,4 +1,4 @@
-#include "Helper.h"
+#include <Include/Mem.h>
 
 void kMemSet(void* pvDst, BYTE bData, int iSize) {
 	int i;
