@@ -11,6 +11,7 @@ void Main(void)
 	BYTE bFlags;
 	char vcTemp[2] = {0, };
 	int i = 0, j;
+	KEYDATA stData;
 
 	kPrintString(0, 10, "[KERNEL] ==== Enter to IA-32e mode ====");
 	kPrintString(0, 12, "[KERNEL] Change old GDT to new one for IA-32e mode");
@@ -20,16 +21,16 @@ void Main(void)
 	kPrintString(0, 13, "[KERNEL] Set TSS Segment");
 	kLoadTR(GDT_TSS_SEGMENT);
 
-	// 인터럽트 사용 위해 IDT 초기화
+	// �씤�꽣�읇�듃 �궗�슜 �쐞�빐 IDT 珥덇린�솕
 	kPrintString(0, 14, "[KERNEL] Initialize and set IDT");
 	kInitializeIDTTables();
 	kLoadIDTR(IDTR_START_ADDRESS);
 
-	// 키보드 초기화
+	// �궎蹂대뱶 珥덇린�솕
 	kInitializeKeyboard();
 	kPrintString(0, 15, "[KERNEL] Activate Keyboard");
 
-	// PIC 컨트롤러 초기화
+	// PIC 而⑦듃濡ㅻ윭 珥덇린�솕
 	kInitializePIC();
 	kPrintString(0, 16, "[KERNEL] Initialize PIC");
 
@@ -38,16 +39,16 @@ void Main(void)
 	kPrintString(0, 17, "[KERNEL] Enable Interrupt");
 
 	while(1) {
-		if (kIsReadBufferFull() == TRUE) {
-			bTemp = kGetKeyboardScanCode();
+		if( kGetKeyFromKeyQueue( &stData ) == TRUE )
+		{
+			if( stData.bFlags & KEY_FLAGS_DOWN )
+			{
+				vcTemp[ 0 ] = stData.bASCIICode;
+				kPrintString( i++, 20, vcTemp );
 
-			if (kConvertScanCodeToASCIICode(bTemp, &(vcTemp[0]), &bFlags) == TRUE) {
-				if (bFlags & KEY_FLAGS_DOWN) {
-					kPrintString (i++, 20, vcTemp);
-
-					if (vcTemp[0] == '0') {
-						bTemp = bTemp / 0;
-					}
+				if( vcTemp[ 0 ] == '0' )
+				{
+					bTemp = bTemp / 0;
 				}
 			}
 		}

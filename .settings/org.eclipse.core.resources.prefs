@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+encoding//02.Kernel64/Kernel/DeviceDriver/Keyboard.c=UTF-8
+encoding//02.Kernel64/Kernel/DeviceDriver/Keyboard.h=UTF-8
+encoding//02.Kernel64/Kernel/Init/InterruptHandler.c=UTF-8
+encoding//02.Kernel64/Kernel/Main.c=UTF-8

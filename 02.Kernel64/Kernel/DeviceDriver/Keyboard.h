@@ -2,6 +2,7 @@
 #define __KEYBOARD_H__
 
 #include <DataType/Types64.h>
+#include <DataType/Queue.h>
 
 #define	KEY_SKIPCOUNTFORPAUSE	2
 
@@ -10,6 +11,7 @@
 #define	KEY_FLAGS_EXTENDEDKEY	0x02
 
 #define	KEY_MAPPING_TABLE_MAX	89
+#define KEY_MAX_QUEUE_COUNT		100
 
 #define	KEY_NONE		0x00
 #define	KEY_ENTER		'\n'
@@ -49,13 +51,12 @@
 #define KEY_F12			0x9F
 #define KEY_PAUSE		0xA0
 
-#pragma pack (push, 1)
+#pragma pack (push, 1)	// 1바이트로 정렬
 
 typedef struct kKeyMappingEntryStruct {
 	BYTE bNormalCode;
-	BYTE bCombinedCode;	// Shift, Cpas Lock키와 조합된 ASCII 코드
+	BYTE bCombinedCode;	// Shift, Cpas Lock�궎�� 議고빀�맂 ASCII 肄붾뱶
 } KEYMAPPING_ENTRY;
-#pragma pack (pop)
 
 typedef struct kKeyboardManagerStruct {
 	BOOL 	bShiftDown;
@@ -67,7 +68,15 @@ typedef struct kKeyboardManagerStruct {
 	int		iSkipCountForPause;
 } KEYBOARD_MANAGER;
 
-void kInitializeKeyboard(void);
+typedef struct kKeyDataStruct {
+	BYTE	bScanCode;
+	BYTE	bASCIICode;
+	BYTE	bFlags;
+} KEYDATA;
+
+#pragma pack (pop)
+
+BOOL kInitializeKeyboard(void);
 BOOL kIsWriteBufferAvailable(void);
 BOOL kIsReadBufferAvailable(void);
 BOOL kIsReadBufferFull(void);
@@ -82,5 +91,7 @@ BOOL kIsNumberPadScanCode(BYTE bScanCode);
 BOOL kIsUseCombinedCode(BOOL bScanCode);
 void UpdateCombinationKeyStatusAndLED(BYTE bScanCode);
 BOOL kConvertScanCodeToASCIICode(BYTE bScanCode,BYTE* pbASCIICode, BOOL* pbFlags);
+BOOL kWaitForACKAndPutOtherScanCode(void);
+BOOL kGetKeyFromKeyQueue( KEYDATA* pstData );
 
 #endif

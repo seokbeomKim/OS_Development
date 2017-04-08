@@ -1,7 +1,7 @@
 #include <Init/InterruptHandler.h>
 #include <DeviceDriver/PIC_Controller.h>
 
-// 공통으로 사용되는 Exception Handler
+// 怨듯넻�쑝濡� �궗�슜�릺�뒗 Exception Handler
 void kCommonExceptionHandler(int iVectorNum, QWORD qwErrorCode) {
 	char vcBuffer[2] = {0, };
 
@@ -12,7 +12,7 @@ void kCommonExceptionHandler(int iVectorNum, QWORD qwErrorCode) {
 	kPrintString(42, 20, vcBuffer);
 }
 
-// 공통으로 사용되는 Interrupt Handler
+// 怨듯넻�쑝濡� �궗�슜�릺�뒗 Interrupt Handler
 void kCommonInterruptHandler(int iVectorNum) {
 	char vcBuffer[] = "[INT:  ,  ]";
 	static int g_iCommonInterruptCount = 0;
@@ -30,14 +30,22 @@ void kCommonInterruptHandler(int iVectorNum) {
 void kKeyboardHandler(int iVectorNum) {
 	char vcBuffer[] = "[INT:  ,  ]";
 	static int g_iKeyboardInterruptCount = 0x00;
+//
+//	vcBuffer[5] = '0' + (int)(iVectorNum / 10);
+//	vcBuffer[6] = '0' + (int)(iVectorNum % 10);
+//	vcBuffer[8] = '0' + g_iKeyboardInterruptCount;
+//	g_iKeyboardInterruptCount = (++g_iKeyboardInterruptCount) % 10;
+//	kPrintString(0, 30, vcBuffer);
+//
+	BYTE bTemp;
 
-	vcBuffer[5] = '0' + (int)(iVectorNum / 10);
-	vcBuffer[6] = '0' + (int)(iVectorNum % 10);
-	vcBuffer[8] = '0' + g_iKeyboardInterruptCount;
-	g_iKeyboardInterruptCount = (++g_iKeyboardInterruptCount) % 10;
-	kPrintString(0, 30, vcBuffer);
+	if (kIsReadBufferFull() == TRUE) {
+		bTemp = kGetKeyboardScanCode();
+		kConvertScanCodeAndEnqueue(bTemp);
+	}
 
 	kSendEOIToPIC(iVectorNum - PIC_IRQ_START_VECTOR);
+
 }
 
 void kGeneralProtectionExceptionHandler(int iVectorNum, QWORD qwErrorCode) {

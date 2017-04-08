@@ -1,7 +1,8 @@
 Main.o: Main.c \
- /home/sukbeom/Workspace/OS64/02.Kernel64/Kernel/DataType/Types64.h \
- /home/sukbeom/Workspace/OS64/02.Kernel64/Kernel/DeviceDriver/DeviceDriver.h \
- /home/sukbeom/Workspace/OS64/02.Kernel64/Kernel/DeviceDriver/Keyboard.h \
- /home/sukbeom/Workspace/OS64/02.Kernel64/Kernel/DeviceDriver/PIC_Controller.h \
- /home/sukbeom/Workspace/OS64/02.Kernel64/Kernel/Init/Descriptor.h \
- /home/sukbeom/Workspace/OS64/02.Kernel64/Kernel/Asm/AsmHelper.h
+ /mnt/c/Workspace/OS_Development/02.Kernel64/Kernel/DataType/Types64.h \
+ /mnt/c/Workspace/OS_Development/02.Kernel64/Kernel/DeviceDriver/DeviceDriver.h \
+ /mnt/c/Workspace/OS_Development/02.Kernel64/Kernel/DeviceDriver/Keyboard.h \
+ /mnt/c/Workspace/OS_Development/02.Kernel64/Kernel/DataType/Queue.h \
+ /mnt/c/Workspace/OS_Development/02.Kernel64/Kernel/DeviceDriver/PIC_Controller.h \
+ /mnt/c/Workspace/OS_Development/02.Kernel64/Kernel/Init/Descriptor.h \
+ /mnt/c/Workspace/OS_Development/02.Kernel64/Kernel/Asm/AsmHelper.h

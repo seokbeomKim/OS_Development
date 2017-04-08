@@ -9,10 +9,19 @@
  */
 typedef struct _CircularQueue {
 	void*	node;
-	int		size;
+	int		datasize;
 	int		limit;
 	int		idx_enqueue;
 	int		idx_dequeue;
-} CircularQueue;
+
+	BOOL	bLastOperationEnqueue;
+} Queue;
+
+void kInitializeQueue(Queue* pstQueue, void* pvQueueBuffer,
+		int iMaxDataCount, int iDataSize);
+BOOL kIsQueueFull(const Queue* pstQueue);
+BOOL kIsQueueEmpty(const Queue* pstQueue);
+BOOL kEnQueue(Queue* pstQueue, const void* pvData);
+BOOL kDeQueue(Queue* pstQueue, void* pvData);
 
 #endif
