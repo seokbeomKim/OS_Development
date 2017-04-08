@@ -1,5 +1,5 @@
 #include <Init/Descriptor.h>
-#include <Include/Helper.h>
+#include <Include/Mem.h>
 #include <Asm/ISR.h>
 
 void kInitializeGDTTableAndTSS(void) {

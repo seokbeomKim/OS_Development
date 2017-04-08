@@ -1,0 +1,5 @@
+# To-do list
+
+## 11/10/2016
+1. Implement queue data structure
+2. Upgrade keyboard device driver to use queue data structure and interrupt efficiently.

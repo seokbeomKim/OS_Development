@@ -1,0 +1,7 @@
+# Testcases 
+To check whether implemented functions work well, create some test cases and call from Main function(Main.c)
+
+## List of cases
+
+* Queue 
+** CircularQueue

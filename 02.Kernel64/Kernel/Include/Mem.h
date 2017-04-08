@@ -1,5 +1,5 @@
-#ifndef __HELPER_H__
-#define __HELPER_H__
+#ifndef __MEM_H__
+#define __MEM_H__
 
 #include <DataType/Types64.h>
 

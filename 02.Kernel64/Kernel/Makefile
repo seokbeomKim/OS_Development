@@ -21,6 +21,9 @@ Module:
 	
 	@echo ">>> Build Init directory...";
 	@make -C Init ${MAKE_OPTION} KERNEL_DIR=${KERNEL_DIR}
+	
+	@echo ">>> Build Testcase...";
+	@make -C Testcase ${MAKE_OPTION} KERNEL_DIR=${KERNEL_DIR}
 
 $(ENTRY_OBJ_FILES): EntryPoint.s
 	@$(NASM64) $< -o $@
