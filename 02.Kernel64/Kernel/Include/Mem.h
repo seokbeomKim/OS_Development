@@ -7,5 +7,7 @@ void	kMemSet(void* pvDst, BYTE bData, int iSize);
 int		kMemCpy(void* pvDst, const void* pvSrc, int iSize);
 int		kMemCmp(const void* pvDst, const void* pvSrc, int iSize);
 BOOL	kSetInterruptFlag(BOOL bEnableInterrupt);
+void	kCheckTotalRAMSize(void);
+QWORD	kGetTotalRAMSize(void);
 
 #endif

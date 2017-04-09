@@ -3,5 +3,6 @@
 
 #include <DataType/Queue.h>
 #include <DataType/Types64.h>
+#include <DataType/String.h>
 
 #endif

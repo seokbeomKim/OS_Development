@@ -78,7 +78,7 @@ BOOL kIsWriteBufferFull(void)	// InBuffer
 	 * Input Buffer가 비었음을 나타낸다.
 	 */
 	if (kReadFromPort(0x64) & 0x02) {
-		kPrintString(0, 0, "ReadFromPort");
+		kPrintStringXY(0, 0, "ReadFromPort");
 		return TRUE;
 	}
 	return FALSE;

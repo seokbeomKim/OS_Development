@@ -1,18 +1,19 @@
 #include <Init/InterruptHandler.h>
 #include <DeviceDriver/PIC_Controller.h>
+#include <DeviceDriver/Console.h>
 
-// 怨듯넻�쑝濡� �궗�슜�릺�뒗 Exception Handler
+// Exception Handler
 void kCommonExceptionHandler(int iVectorNum, QWORD qwErrorCode) {
 	char vcBuffer[2] = {0, };
 
 	vcBuffer[0] = '0' + iVectorNum / 10;
 	vcBuffer[1] = '0' + iVectorNum % 10;
 
-	kPrintString(0, 20, "[EXCEPTION] An exception has been occured: ");
-	kPrintString(42, 20, vcBuffer);
+	kPrintStringXY(0, 20, "[EXCEPTION] An exception has been occured: ");
+	kPrintStringXY(42, 20, vcBuffer);
 }
 
-// 怨듯넻�쑝濡� �궗�슜�릺�뒗 Interrupt Handler
+// Interrupt Handler
 void kCommonInterruptHandler(int iVectorNum) {
 	char vcBuffer[] = "[INT:  ,  ]";
 	static int g_iCommonInterruptCount = 0;
@@ -22,7 +23,7 @@ void kCommonInterruptHandler(int iVectorNum) {
 	vcBuffer[8] = '0' + g_iCommonInterruptCount;
 
     g_iCommonInterruptCount = ( g_iCommonInterruptCount + 1 ) % 10;
-    kPrintString(60, 0, vcBuffer);
+    kPrintStringXY(70, 0, vcBuffer);
 
 	kSendEOIToPIC(iVectorNum - PIC_IRQ_START_VECTOR);
 }
@@ -30,13 +31,13 @@ void kCommonInterruptHandler(int iVectorNum) {
 void kKeyboardHandler(int iVectorNum) {
 	char vcBuffer[] = "[INT:  ,  ]";
 	static int g_iKeyboardInterruptCount = 0x00;
-//
-//	vcBuffer[5] = '0' + (int)(iVectorNum / 10);
-//	vcBuffer[6] = '0' + (int)(iVectorNum % 10);
-//	vcBuffer[8] = '0' + g_iKeyboardInterruptCount;
-//	g_iKeyboardInterruptCount = (++g_iKeyboardInterruptCount) % 10;
-//	kPrintString(0, 30, vcBuffer);
-//
+
+	vcBuffer[5] = '0' + (int)(iVectorNum / 10);
+	vcBuffer[6] = '0' + (int)(iVectorNum % 10);
+	vcBuffer[8] = '0' + g_iKeyboardInterruptCount;
+	g_iKeyboardInterruptCount = (++g_iKeyboardInterruptCount) % 10;
+	kPrintStringXY(0, 0, vcBuffer);
+
 	BYTE bTemp;
 
 	if (kIsReadBufferFull() == TRUE) {
@@ -45,11 +46,10 @@ void kKeyboardHandler(int iVectorNum) {
 	}
 
 	kSendEOIToPIC(iVectorNum - PIC_IRQ_START_VECTOR);
-
 }
 
 void kGeneralProtectionExceptionHandler(int iVectorNum, QWORD qwErrorCode) {
-	kPrintString(0, 0, "[EXCEPTION] GeneralProtection Exception!!!");
+	kPrintStringXY(0, 0, "[EXCEPTION] GeneralProtection Exception!!!");
 
 	char vcBuffer[5] = {0, };
 	QWORD temp = qwErrorCode;
@@ -64,7 +64,7 @@ void kGeneralProtectionExceptionHandler(int iVectorNum, QWORD qwErrorCode) {
 	temp = temp % 10;
 	vcBuffer[4] = '0' + temp;
 
-	kPrintString(0, 1, vcBuffer);
+	kPrintStringXY(0, 1, vcBuffer);
 
 	while (1);
 }

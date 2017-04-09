@@ -3,5 +3,6 @@
 
 #include <DeviceDriver/Keyboard.h>
 #include <DeviceDriver/PIC_Controller.h>
+#include <DeviceDriver/Console.h>
 
 #endif
