@@ -20,6 +20,10 @@ void Main(void)
 	kInitializeIDTTables();
 	kLoadIDTR(IDTR_START_ADDRESS);
 
+	kPrintf("[KERNEL] Ram Check\n");
+	kCheckTotalRAMSize();
+	kPrintf(" > Size = %d\n", kGetTotalRAMSize());
+
 	kInitializeKeyboard();
 	kPrintf("[KERNEL] Activate Keyboard\n");
 

@@ -23,7 +23,7 @@ void kCommonInterruptHandler(int iVectorNum) {
 	vcBuffer[8] = '0' + g_iCommonInterruptCount;
 
     g_iCommonInterruptCount = ( g_iCommonInterruptCount + 1 ) % 10;
-    kPrintStringXY(70, 0, vcBuffer);
+    kPrintStringXY(65, 0, vcBuffer);
 
 	kSendEOIToPIC(iVectorNum - PIC_IRQ_START_VECTOR);
 }
@@ -36,7 +36,7 @@ void kKeyboardHandler(int iVectorNum) {
 	vcBuffer[6] = '0' + (int)(iVectorNum % 10);
 	vcBuffer[8] = '0' + g_iKeyboardInterruptCount;
 	g_iKeyboardInterruptCount = (++g_iKeyboardInterruptCount) % 10;
-	kPrintStringXY(0, 0, vcBuffer);
+//	kPrintStringXY(0, 0, vcBuffer);
 
 	BYTE bTemp;
 
