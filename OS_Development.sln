@@ -1,0 +1,202 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BD64E799-AE6A-4916-804F-70D254298207}"
+	ProjectSection(SolutionItems) = preProject
+		.project = .project
+		elf_i386.x = elf_i386.x
+		ImageMaker = ImageMaker
+		ImageMaker.exe = ImageMaker.exe
+		Makefile = Makefile
+		README.md = README.md
+		TODO = TODO
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00.BootLoader", "00.BootLoader", "{842B53D7-18EB-4B02-B353-D1525725ABA7}"
+	ProjectSection(SolutionItems) = preProject
+		00.BootLoader\AsmUtils.asm = 00.BootLoader\AsmUtils.asm
+		00.BootLoader\BootLoader.asm = 00.BootLoader\BootLoader.asm
+		00.BootLoader\BootLoader.bin = 00.BootLoader\BootLoader.bin
+		00.BootLoader\Makefile = 00.BootLoader\Makefile
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.Kernel32", "01.Kernel32", "{3B78B3BE-494C-421D-8184-4F426848E9F8}"
+	ProjectSection(SolutionItems) = preProject
+		01.Kernel32\Dependency.dep = 01.Kernel32\Dependency.dep
+		01.Kernel32\Kernel32.bin = 01.Kernel32\Kernel32.bin
+		01.Kernel32\Makefile = 01.Kernel32\Makefile
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backup", "Backup", "{AC30673B-FD37-4782-A3A3-39D8869F94D9}"
+	ProjectSection(SolutionItems) = preProject
+		01.Kernel32\Backup\VirtualOS.asm = 01.Kernel32\Backup\VirtualOS.asm
+		01.Kernel32\Backup\VirtualOS.bin = 01.Kernel32\Backup\VirtualOS.bin
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EntryPoint", "EntryPoint", "{9B3498DF-3EEB-41A7-B7DD-08E0F99AF937}"
+	ProjectSection(SolutionItems) = preProject
+		01.Kernel32\EntryPoint\AsmUtils32.s = 01.Kernel32\EntryPoint\AsmUtils32.s
+		01.Kernel32\EntryPoint\EntryPoint.s = 01.Kernel32\EntryPoint\EntryPoint.s
+		01.Kernel32\EntryPoint\Makefile = 01.Kernel32\EntryPoint\Makefile
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kernel", "Kernel", "{DD289D18-062F-4148-91A8-60C7D9D99EF0}"
+	ProjectSection(SolutionItems) = preProject
+		01.Kernel32\Kernel\AsmHelpers.asm = 01.Kernel32\Kernel\AsmHelpers.asm
+		01.Kernel32\Kernel\AsmHelpers.h = 01.Kernel32\Kernel\AsmHelpers.h
+		01.Kernel32\Kernel\AsmHelpers.o = 01.Kernel32\Kernel\AsmHelpers.o
+		01.Kernel32\Kernel\Dependency.dep = 01.Kernel32\Kernel\Dependency.dep
+		01.Kernel32\Kernel\elf_i386.x = 01.Kernel32\Kernel\elf_i386.x
+		01.Kernel32\Kernel\elf_i386.x.bak = 01.Kernel32\Kernel\elf_i386.x.bak
+		01.Kernel32\Kernel\Kernel32.elf = 01.Kernel32\Kernel\Kernel32.elf
+		01.Kernel32\Kernel\Main.c = 01.Kernel32\Kernel\Main.c
+		01.Kernel32\Kernel\Main.o = 01.Kernel32\Kernel\Main.o
+		01.Kernel32\Kernel\Makefile = 01.Kernel32\Kernel\Makefile
+		01.Kernel32\Kernel\Page.c = 01.Kernel32\Kernel\Page.c
+		01.Kernel32\Kernel\Page.h = 01.Kernel32\Kernel\Page.h
+		01.Kernel32\Kernel\Page.o = 01.Kernel32\Kernel\Page.o
+		01.Kernel32\Kernel\Types.h = 01.Kernel32\Kernel\Types.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02.Kernel64", "02.Kernel64", "{52F81434-EB16-4DAF-B4AC-2E9929A676E9}"
+	ProjectSection(SolutionItems) = preProject
+		02.Kernel64\elf_x86_64.x = 02.Kernel64\elf_x86_64.x
+		02.Kernel64\Kernel64.bin = 02.Kernel64\Kernel64.bin
+		02.Kernel64\Makefile = 02.Kernel64\Makefile
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kernel", "Kernel", "{72317383-EFCD-430C-929B-DFE8229EE017}"
+	ProjectSection(SolutionItems) = preProject
+		02.Kernel64\Kernel\Dependency.dep = 02.Kernel64\Kernel\Dependency.dep
+		02.Kernel64\Kernel\elf_x86_64.x = 02.Kernel64\Kernel\elf_x86_64.x
+		02.Kernel64\Kernel\EntryPoint.o = 02.Kernel64\Kernel\EntryPoint.o
+		02.Kernel64\Kernel\EntryPoint.s = 02.Kernel64\Kernel\EntryPoint.s
+		02.Kernel64\Kernel\Kernel64.elf = 02.Kernel64\Kernel\Kernel64.elf
+		02.Kernel64\Kernel\Main.c = 02.Kernel64\Kernel\Main.c
+		02.Kernel64\Kernel\Makefile = 02.Kernel64\Kernel\Makefile
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Asm", "Asm", "{4FF99FA7-521F-4D0B-B8B5-A18CDFAC802D}"
+	ProjectSection(SolutionItems) = preProject
+		02.Kernel64\Kernel\Asm\AsmHelper.asm = 02.Kernel64\Kernel\Asm\AsmHelper.asm
+		02.Kernel64\Kernel\Asm\AsmHelper.h = 02.Kernel64\Kernel\Asm\AsmHelper.h
+		02.Kernel64\Kernel\Asm\ISR.asm = 02.Kernel64\Kernel\Asm\ISR.asm
+		02.Kernel64\Kernel\Asm\ISR.h = 02.Kernel64\Kernel\Asm\ISR.h
+		02.Kernel64\Kernel\Asm\Makefile = 02.Kernel64\Kernel\Asm\Makefile
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildTool", "BuildTool", "{D5CBEBF9-4272-429F-8218-05C0B7A0930C}"
+	ProjectSection(SolutionItems) = preProject
+		02.Kernel64\Kernel\Buildtool\Post_Include.mk = 02.Kernel64\Kernel\Buildtool\Post_Include.mk
+		02.Kernel64\Kernel\Buildtool\Pre_Include.mk = 02.Kernel64\Kernel\Buildtool\Pre_Include.mk
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataType", "DataType", "{5B7D02E5-EEFC-495B-B59B-0D36F08F7D1E}"
+	ProjectSection(SolutionItems) = preProject
+		02.Kernel64\Kernel\DataType\Makefile = 02.Kernel64\Kernel\DataType\Makefile
+		02.Kernel64\Kernel\DataType\Queue.c = 02.Kernel64\Kernel\DataType\Queue.c
+		02.Kernel64\Kernel\DataType\Queue.h = 02.Kernel64\Kernel\DataType\Queue.h
+		02.Kernel64\Kernel\DataType\String.c = 02.Kernel64\Kernel\DataType\String.c
+		02.Kernel64\Kernel\DataType\String.h = 02.Kernel64\Kernel\DataType\String.h
+		02.Kernel64\Kernel\DataType\Types.h = 02.Kernel64\Kernel\DataType\Types.h
+		02.Kernel64\Kernel\DataType\Types64.h = 02.Kernel64\Kernel\DataType\Types64.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DeviceDriver", "DeviceDriver", "{32B84045-559F-4D06-B7F6-410577B2B049}"
+	ProjectSection(SolutionItems) = preProject
+		02.Kernel64\Kernel\DeviceDriver\Console.c = 02.Kernel64\Kernel\DeviceDriver\Console.c
+		02.Kernel64\Kernel\DeviceDriver\Console.h = 02.Kernel64\Kernel\DeviceDriver\Console.h
+		02.Kernel64\Kernel\DeviceDriver\DeviceDriver.h = 02.Kernel64\Kernel\DeviceDriver\DeviceDriver.h
+		02.Kernel64\Kernel\DeviceDriver\Keyboard.c = 02.Kernel64\Kernel\DeviceDriver\Keyboard.c
+		02.Kernel64\Kernel\DeviceDriver\Keyboard.h = 02.Kernel64\Kernel\DeviceDriver\Keyboard.h
+		02.Kernel64\Kernel\DeviceDriver\Makefile = 02.Kernel64\Kernel\DeviceDriver\Makefile
+		02.Kernel64\Kernel\DeviceDriver\PIC_Controller.c = 02.Kernel64\Kernel\DeviceDriver\PIC_Controller.c
+		02.Kernel64\Kernel\DeviceDriver\PIC_Controller.h = 02.Kernel64\Kernel\DeviceDriver\PIC_Controller.h
+		02.Kernel64\Kernel\DeviceDriver\PIT_Controller.c = 02.Kernel64\Kernel\DeviceDriver\PIT_Controller.c
+		02.Kernel64\Kernel\DeviceDriver\PIT_Controller.h = 02.Kernel64\Kernel\DeviceDriver\PIT_Controller.h
+		02.Kernel64\Kernel\DeviceDriver\RTC_Controller.c = 02.Kernel64\Kernel\DeviceDriver\RTC_Controller.c
+		02.Kernel64\Kernel\DeviceDriver\RTC_Controller.h = 02.Kernel64\Kernel\DeviceDriver\RTC_Controller.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Include", "Include", "{C10F04C8-2EC7-4F3D-ACB8-62DF31ECF25A}"
+	ProjectSection(SolutionItems) = preProject
+		02.Kernel64\Kernel\Include\Converter.c = 02.Kernel64\Kernel\Include\Converter.c
+		02.Kernel64\Kernel\Include\Converter.h = 02.Kernel64\Kernel\Include\Converter.h
+		02.Kernel64\Kernel\Include\IO.c = 02.Kernel64\Kernel\Include\IO.c
+		02.Kernel64\Kernel\Include\IO.h = 02.Kernel64\Kernel\Include\IO.h
+		02.Kernel64\Kernel\Include\Makefile = 02.Kernel64\Kernel\Include\Makefile
+		02.Kernel64\Kernel\Include\Mem.c = 02.Kernel64\Kernel\Include\Mem.c
+		02.Kernel64\Kernel\Include\Mem.h = 02.Kernel64\Kernel\Include\Mem.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Init", "Init", "{08E80687-3FBC-4BB5-AA34-AABF414626BF}"
+	ProjectSection(SolutionItems) = preProject
+		02.Kernel64\Kernel\Init\Descriptor.c = 02.Kernel64\Kernel\Init\Descriptor.c
+		02.Kernel64\Kernel\Init\Descriptor.h = 02.Kernel64\Kernel\Init\Descriptor.h
+		02.Kernel64\Kernel\Init\InterruptHandler.c = 02.Kernel64\Kernel\Init\InterruptHandler.c
+		02.Kernel64\Kernel\Init\InterruptHandler.h = 02.Kernel64\Kernel\Init\InterruptHandler.h
+		02.Kernel64\Kernel\Init\Makefile = 02.Kernel64\Kernel\Init\Makefile
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sysutils", "Sysutils", "{D1340318-D04F-4731-8D1C-577F64BF87CF}"
+	ProjectSection(SolutionItems) = preProject
+		02.Kernel64\Kernel\Sysutils\ConsoleShell.c = 02.Kernel64\Kernel\Sysutils\ConsoleShell.c
+		02.Kernel64\Kernel\Sysutils\ConsoleShell.h = 02.Kernel64\Kernel\Sysutils\ConsoleShell.h
+		02.Kernel64\Kernel\Sysutils\Makefile = 02.Kernel64\Kernel\Sysutils\Makefile
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testcase", "Testcase", "{BB814FB0-F605-4613-BF12-B93D0DEA3EEC}"
+	ProjectSection(SolutionItems) = preProject
+		02.Kernel64\Kernel\Testcase\Makefile = 02.Kernel64\Kernel\Testcase\Makefile
+		02.Kernel64\Kernel\Testcase\README = 02.Kernel64\Kernel\Testcase\README
+		02.Kernel64\Kernel\Testcase\Testcase.h = 02.Kernel64\Kernel\Testcase\Testcase.h
+		02.Kernel64\Kernel\Testcase\Testcase_Queue.c = 02.Kernel64\Kernel\Testcase\Testcase_Queue.c
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04.Utility", "04.Utility", "{4F593673-3868-40B7-8ECE-772081F2A4C7}"
+	ProjectSection(SolutionItems) = preProject
+		04.Utility\Makefile = 04.Utility\Makefile
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00.ImageMaker", "00.ImageMaker", "{D3A19FF2-9A73-484A-AAF5-A5C152198C4B}"
+	ProjectSection(SolutionItems) = preProject
+		04.Utility\00.ImageMaker\ImageMaker = 04.Utility\00.ImageMaker\ImageMaker
+		04.Utility\00.ImageMaker\ImageMaker.exe = 04.Utility\00.ImageMaker\ImageMaker.exe
+		04.Utility\00.ImageMaker\main.c = 04.Utility\00.ImageMaker\main.c
+		04.Utility\00.ImageMaker\Makefile = 04.Utility\00.ImageMaker\Makefile
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05.Etc", "05.Etc", "{71CB4124-1CCF-4EFF-AE23-CE024E71CA6A}"
+	ProjectSection(SolutionItems) = preProject
+		05.Etc\EntryPoint.s = 05.Etc\EntryPoint.s
+		05.Etc\Main.c = 05.Etc\Main.c
+		05.Etc\Test.c = 05.Etc\Test.c
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{842B53D7-18EB-4B02-B353-D1525725ABA7} = {BD64E799-AE6A-4916-804F-70D254298207}
+		{3B78B3BE-494C-421D-8184-4F426848E9F8} = {BD64E799-AE6A-4916-804F-70D254298207}
+		{AC30673B-FD37-4782-A3A3-39D8869F94D9} = {3B78B3BE-494C-421D-8184-4F426848E9F8}
+		{9B3498DF-3EEB-41A7-B7DD-08E0F99AF937} = {3B78B3BE-494C-421D-8184-4F426848E9F8}
+		{DD289D18-062F-4148-91A8-60C7D9D99EF0} = {3B78B3BE-494C-421D-8184-4F426848E9F8}
+		{52F81434-EB16-4DAF-B4AC-2E9929A676E9} = {BD64E799-AE6A-4916-804F-70D254298207}
+		{72317383-EFCD-430C-929B-DFE8229EE017} = {52F81434-EB16-4DAF-B4AC-2E9929A676E9}
+		{4FF99FA7-521F-4D0B-B8B5-A18CDFAC802D} = {72317383-EFCD-430C-929B-DFE8229EE017}
+		{D5CBEBF9-4272-429F-8218-05C0B7A0930C} = {72317383-EFCD-430C-929B-DFE8229EE017}
+		{5B7D02E5-EEFC-495B-B59B-0D36F08F7D1E} = {72317383-EFCD-430C-929B-DFE8229EE017}
+		{32B84045-559F-4D06-B7F6-410577B2B049} = {72317383-EFCD-430C-929B-DFE8229EE017}
+		{C10F04C8-2EC7-4F3D-ACB8-62DF31ECF25A} = {72317383-EFCD-430C-929B-DFE8229EE017}
+		{08E80687-3FBC-4BB5-AA34-AABF414626BF} = {72317383-EFCD-430C-929B-DFE8229EE017}
+		{D1340318-D04F-4731-8D1C-577F64BF87CF} = {72317383-EFCD-430C-929B-DFE8229EE017}
+		{BB814FB0-F605-4613-BF12-B93D0DEA3EEC} = {72317383-EFCD-430C-929B-DFE8229EE017}
+		{4F593673-3868-40B7-8ECE-772081F2A4C7} = {BD64E799-AE6A-4916-804F-70D254298207}
+		{D3A19FF2-9A73-484A-AAF5-A5C152198C4B} = {4F593673-3868-40B7-8ECE-772081F2A4C7}
+		{71CB4124-1CCF-4EFF-AE23-CE024E71CA6A} = {BD64E799-AE6A-4916-804F-70D254298207}
+	EndGlobalSection
+EndGlobal
