@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26403.0
+VisualStudioVersion = 15.0.26430.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BD64E799-AE6A-4916-804F-70D254298207}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OS64", "OS64", "{BD64E799-AE6A-4916-804F-70D254298207}"
 	ProjectSection(SolutionItems) = preProject
 		.project = .project
 		elf_i386.x = elf_i386.x
@@ -175,6 +175,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05.Etc", "05.Etc", "{71CB41
 		05.Etc\Test.c = 05.Etc\Test.c
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scheduler", "Scheduler", "{C1799C98-F8E5-41D2-A2F1-168D1B10A9F2}"
+	ProjectSection(SolutionItems) = preProject
+		02.Kernel64\Kernel\Testcase\Makefile = 02.Kernel64\Kernel\Testcase\Makefile
+		Task.c = Task.c
+		Task.h = Task.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -198,5 +205,6 @@ Global
 		{4F593673-3868-40B7-8ECE-772081F2A4C7} = {BD64E799-AE6A-4916-804F-70D254298207}
 		{D3A19FF2-9A73-484A-AAF5-A5C152198C4B} = {4F593673-3868-40B7-8ECE-772081F2A4C7}
 		{71CB4124-1CCF-4EFF-AE23-CE024E71CA6A} = {BD64E799-AE6A-4916-804F-70D254298207}
+		{C1799C98-F8E5-41D2-A2F1-168D1B10A9F2} = {72317383-EFCD-430C-929B-DFE8229EE017}
 	EndGlobalSection
 EndGlobal

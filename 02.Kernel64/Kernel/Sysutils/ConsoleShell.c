@@ -4,6 +4,7 @@
 #include <Asm/AsmHelper.h>
 #include <DeviceDriver/PIT_Controller.h>
 #include <DeviceDriver/RTC_Controller.h>
+#include <Scheduler/Task.h>
 
 SHELLCOMMANDENTRY gs_vstCommandTable[] =
 {
@@ -17,8 +18,11 @@ SHELLCOMMANDENTRY gs_vstCommandTable[] =
 		{"rdtsc", "Read Time Stamp Counter", kReadTimeStampCounter},
 		{"cpuspeed", "Measure Processor Speed", kMeasureProcessorSpeed},
 		{"date", "Show date and time", kShowDateAndTime},
-
+		{"createtask", "Create Task", kCreateTestTask},
 };
+
+static TCB gs_vstTask[2] = { 0, };
+static QWORD gs_vstStack[1024] = { 0, };
 
 void kStartConsoleShell( void )
 {
@@ -412,4 +416,31 @@ void kShowDateAndTime( const char* pcParameterBuffer )
     kPrintf( "Date: %d/%d/%d %s, ", wYear, bMonth, bDayOfMonth,
              kConvertDayOfWeekToString( bDayOfWeek ) );
     kPrintf( "Time: %d:%d:%d\n", bHour, bMinute, bSecond );
+}
+
+void kTestTask(void) {
+	int i = 0;
+	while (1) {
+		kPrintf("[%d] This message is from kTestTask.\n", i++);
+		kGetCh();
+		kSwitchContext(&(gs_vstTask[1].stContext), &(gs_vstTask[0].stContext));
+	}
+}
+
+void kCreateTestTask(const char* pcParameterBuffer)
+{
+	KEYDATA stData;
+	int i = 0;
+
+	kSetUpTask(&(gs_vstTask[1]), 1, 0, (QWORD)kTestTask, &(gs_vstStack), sizeof(gs_vstStack));
+
+	while (1)
+	{
+		kPrintf("[%d] This message is from kConsoleShell. Press any key to switch task\n", i++);
+		if (kGetCh() == 'q') {
+			break;
+		}
+
+		kSwitchContext(&(gs_vstTask[0].stContext), &(gs_vstTask[1].stContext));
+	}
 }

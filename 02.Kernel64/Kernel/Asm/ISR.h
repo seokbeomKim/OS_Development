@@ -1,6 +1,10 @@
 #ifndef __ISR_H__
 #define __ISR_H__
 
+void	kSaveContext(void);
+void	kRestoreContext(void);
+void	kSwitchContext(const char* pcParameterBuffer);
+
 // ISR 정의 for Exception
 void	kISR_DivideError(void);
 void	kISR_Debugger(void);

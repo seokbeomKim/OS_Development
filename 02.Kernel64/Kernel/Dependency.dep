@@ -8,6 +8,8 @@ Main.o: Main.c \
  /mnt/c/Workspace/OS_Development/02.Kernel64/Kernel/DeviceDriver/Keyboard.h \
  /mnt/c/Workspace/OS_Development/02.Kernel64/Kernel/DeviceDriver/PIC_Controller.h \
  /mnt/c/Workspace/OS_Development/02.Kernel64/Kernel/DeviceDriver/Console.h \
+ /mnt/c/Workspace/OS_Development/02.Kernel64/Kernel/DeviceDriver/PIT_Controller.h \
+ /mnt/c/Workspace/OS_Development/02.Kernel64/Kernel/DeviceDriver/RTC_Controller.h \
  /mnt/c/Workspace/OS_Development/02.Kernel64/Kernel/Init/Descriptor.h \
  /mnt/c/Workspace/OS_Development/02.Kernel64/Kernel/Asm/AsmHelper.h \
  /mnt/c/Workspace/OS_Development/02.Kernel64/Kernel/Testcase/Testcase.h

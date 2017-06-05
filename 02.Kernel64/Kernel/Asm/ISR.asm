@@ -14,6 +14,8 @@ kISR_AlignmentCheck, kISR_MachineCheck, kISR_SIMD, kISR_VirtualizationException,
 kISR_SerialPort2, kISR_SerialPort1, kISR_ParallelPort2, kISR_FloppyDiskController, kISR_ParallelPort1, kISR_RTC, kISR41, kISR42, kISR43, kISR_Mouse, kISR_Coprocessor, \
 kISR_HardDisk1, kISR_HardDisk2, kISR_ETC
 global kISR_ETCException
+global kSaveContext, kRestoreContext
+global kSwitchContext
 
 ;; Context 저장과 셀렉터를 교체한다.
 %macro kSaveContext		0
@@ -73,6 +75,59 @@ global kISR_ETCException
 	pop		rax
 	pop		rbp
 %endmacro
+
+kSwitchContext:
+	push	rbp
+	mov		rbp, rsp
+
+	pushfq	; pushfq: Save RFLAGS to stack
+
+	; Current Context NULL이면 context 저장 필요 없음
+	cmp		rdi, 0
+	je		.LoadContext
+	
+	popfq	; Restore RFLAGS 
+
+	; Save SS 
+	push	rax 
+	mov		ax, ss
+	mov		qword [rdi + (23 * 8)], rax 
+
+	;; RBP
+	; push rbp, return address 제외하여 rsp 저장 (context switch 위해서)
+	mov		rax, rbp
+	add		rax, 16 
+	mov		qword [rdi + (22 * 8)], rax
+
+
+	;; RFLAGS 
+	pushfq
+	pop		rax ; RFLAGS를 스택에 push한 뒤 pop rax를 통해 rax에 값을 저장한다.
+	mov		qword [rdi + (21 * 8)], rax 
+
+	;; CS 
+	mov		ax, cs 
+	mov		qword [rdi + (20 * 8)], rax 
+
+	;; RIP 레지스터를 return address로 설정한다: RIP
+	mov		rax, qword [rbp + 8]
+	mov		qword [rdi + (19 * 8)], rax 
+
+	pop		rax
+	pop		rbp
+
+	add		rdi, (19 * 8)
+	mov		rsp, rdi 
+	sub		rdi, (19 * 8)
+
+	kSaveContext
+
+.LoadContext:
+	mov		rsp, rsi
+
+	kRestoreContext
+	iretq
+
 
 ; Definition of Handlers: https://en.wikipedia.org/wiki/Interrupt_descriptor_table 참고
 ; 0x00, Divide Error ISR

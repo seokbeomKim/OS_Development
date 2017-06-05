@@ -4,5 +4,7 @@
 #include <DeviceDriver/Keyboard.h>
 #include <DeviceDriver/PIC_Controller.h>
 #include <DeviceDriver/Console.h>
+#include <DeviceDriver/PIT_Controller.h>
+#include <DeviceDriver/RTC_Controller.h>
 
 #endif

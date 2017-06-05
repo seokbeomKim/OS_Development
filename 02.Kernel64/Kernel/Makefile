@@ -21,6 +21,9 @@ Module:
 	
 	@echo ">>> Build Init directory...";
 	@make -C Init ${MAKE_OPTION} KERNEL_DIR=${KERNEL_DIR}
+
+	@echo ">>> Build Scheduler directory...";
+	@make -C Scheduler ${MAKE_OPTION} KERNEL_DIR=${KERNEL_DIR}
 	
 	@echo ">>> Build Sysutils...";
 	@make -C Sysutils ${MAKE_OPTION} KERNEL_DIR=${KERNEL_DIR}
